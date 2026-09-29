@@ -1,14 +1,14 @@
-# VetDoğum
+# VetDoğum – Hayvan Doğum Zamanı Tahmin Sistemi
 
-**Makine öğrenmesi destekli hayvan doğum takip ve risk sınıflandırma prototipi.**
+**Hayvanların doğum zamanını önceden tahmin etmeyi amaçlayan makine öğrenmesi destekli takip prototipi.**
 
 Bu çalışma, **TÜBİTAK 2209-A kapsamında desteklenmeye kabul edilen**, Kütahya Dumlupınar Üniversitesi Bilgisayar Mühendisliği bitirme projemdir. Projeyi ekip arkadaşımla birlikte geliştirdim.
 
-Gerçek hayvan verilerine erişimin sınırlı olduğu geliştirme aşamasında sentetik fizyolojik ve davranışsal verilerle model deneyleri yapılmış; bu çalışma Flutter tabanlı bir takip uygulaması ve FastAPI servisiyle bir araya getirilmiştir. Gelecekte gerçek sensör verileriyle genişletilmesi hedeflenmektedir.
+Gerçek hayvan verilerine erişimin sınırlı olduğu geliştirme aşamasında, doğumun yaklaştığını gösteren fizyolojik ve davranışsal değişkenler sentetik olarak üretilerek model deneyleri yapılmış; bu çalışma Flutter tabanlı bir takip uygulaması ve FastAPI servisiyle bir araya getirilmiştir. Gelecekte gerçek sensör verileriyle genişletilmesi hedeflenmektedir.
 
 ## Projenin Amacı
 
-Hayvan sahipleri ve veteriner hekimler için hayvan kayıtlarını, gebelik takvimini ve sağlık gözlemlerini bir arada takip edebilecekleri bir prototip geliştirmek; sentetik veri üzerinde farklı makine öğrenmesi yöntemlerini karşılaştırmak.
+Hayvanların fizyolojik ve davranışsal verilerinden yararlanarak doğum zamanının yaklaştığını önceden tahmin etmek ve hayvan sahipleriyle veteriner hekimlerin doğum sürecini daha erken takip edebilmesini sağlamak. Gebelik takvimi, sağlık gözlemleri ve farklı makine öğrenmesi yöntemlerinin karşılaştırılması bu amaç doğrultusunda aynı prototipte bir araya getirilmiştir.
 
 ## Mevcut Özellikler
 
@@ -112,7 +112,7 @@ Android emülatöründe bilgisayarınızdaki API adresi için `http://10.0.2.2:8
 
 Notebook 10.000 sentetik örnek ve 30 özellik üzerinden deneyler yapar; eğitim/doğrulama/test ayrımı %70/%15/%15'tir. SMOTE, hiperparametre arama, model karşılaştırma ve SHAP analizi içerir.
 
-Tahmini doğum tarihi uygulamada takvim hesabıyla elde edilir. ML modeli ise sentetik `successful_birth` etiketini sınıflandırır; bağımsız bir doğum tarihi regresyon modeli değildir. Notebook'taki dört modelli deneyin aksine mevcut API üç modeli eşit ağırlıkla kullanır.
+Projenin temel hedefi doğum zamanını önceden tahmin etmektir. Mevcut sürümde tahmini doğum tarihi, çiftleşme tarihi ve türe özgü gebelik süresinden takvim hesabıyla elde edilir. ML modeli ise sentetik `successful_birth` etiketini sınıflandırır; henüz doğuma kalan süreyi doğrudan üreten bağımsız bir regresyon modeli değildir. Notebook'taki dört modelli deneyin aksine mevcut API üç modeli eşit ağırlıkla kullanır.
 
 ## Projenin Durumu
 
